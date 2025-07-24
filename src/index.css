@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.dot {
+  animation: floatDot 15s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes floatDot {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
