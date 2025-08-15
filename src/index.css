@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --font-heading: 'Sora', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+
+.header-brand h1 {
+  font-family: 'Helmet', sans-serif;
+  font-weight: 400;
+}
+
+
 .dot {
   animation: floatDot 15s linear infinite;
 }

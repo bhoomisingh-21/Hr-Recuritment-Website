@@ -5,19 +5,22 @@ import { Check, TrendingUp, Clock } from "lucide-react";
 
 const benefits = [
   {
-    icon: <TrendingUp className="w-5 h-5 text-green-500" />,
+    icon: <TrendingUp className="w-6 h-6 text-green-400" />,
     title: "Faster Hiring",
-    description: "Skip lengthy screening. Get qualified candidates ready to interview in 48 hours.",
+    description:
+      "Skip lengthy screening. Get qualified candidates ready to interview in 48 hours.",
   },
   {
-    icon: <Check className="w-5 h-5 text-green-500" />,
+    icon: <Check className="w-6 h-6 text-green-400" />,
     title: "Better Matches",
-    description: "We pre-vet for skills and culture fit so you only meet the best people.",
+    description:
+      "We pre-vet for skills and culture fit so you only meet the best people.",
   },
   {
-    icon: <Clock className="w-5 h-5 text-green-500" />,
+    icon: <Clock className="w-6 h-6 text-green-400" />,
     title: "Save Time & Money",
-    description: "Our flat 8% fee and done-for-you process save you weeks of effort.",
+    description:
+      "Our flat 8% fee and done-for-you process save you weeks of effort.",
   },
 ];
 
@@ -25,7 +28,7 @@ export default function Benefit() {
   return (
     <section id="benefits" className="bg-black text-white py-24 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Section Pill - Styled like About */}
+        {/* Section Pill */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,9 +37,7 @@ export default function Benefit() {
           className="inline-block text-sm px-5 py-1.5 rounded-md mb-6 
                      text-gray-300 bg-black 
                      border border-green-500 
-                     shadow-[0_0_12px_rgba(34,197,94,0.6)] 
-                     hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] 
-                     transition duration-300"
+                     shadow-[0_0_12px_rgba(34,197,94,0.6)]"
         >
           Benefits
         </motion.div>
@@ -47,7 +48,7 @@ export default function Benefit() {
         </h2>
 
         {/* Subheading */}
-        <p className="text-gray-400 text-base md:text-lg mb-16">
+        <p className="text-gray-300 text-base md:text-lg mb-16">
           Discover the key benefits of partnering with us.
         </p>
 
@@ -60,15 +61,22 @@ export default function Benefit() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-[#111111] rounded-2xl p-6 text-left shadow-md border border-gray-800"
+              className="relative rounded-2xl p-6 text-left shadow-lg border border-gray-800
+                         bg-gradient-to-br from-[#050505] via-[#0a0a0a] to-[#0f0f0f]
+                         overflow-hidden"
             >
-              <div className="bg-[#1d1d1d] p-2 rounded-md w-fit mx-auto mb-4">
+              {/* Brighter Top-Left Green Glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(34,197,94,0.35),transparent_70%)] pointer-events-none"></div>
+
+              <div className="relative z-10 bg-[#1d1d1d]/50 p-2 rounded-md w-fit mx-auto mb-4">
                 {item.icon}
               </div>
-              <h3 className="text-center text-white text-lg font-semibold mb-2">
+              <h3 className="relative z-10 text-center text-white text-lg md:text-xl font-semibold mb-2">
                 {item.title}
               </h3>
-              <p className="text-center text-gray-400 text-sm">{item.description}</p>
+              <p className="relative z-10 text-center text-gray-300 text-sm md:text-base leading-relaxed">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

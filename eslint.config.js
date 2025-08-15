@@ -13,6 +13,7 @@ export default defineConfig([
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
     ],
+    
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -27,3 +28,13 @@ export default defineConfig([
     },
   },
 ])
+module.exports = {
+  theme: {
+    screens: {
+      sm: '500px', // now sm: means >= 500px
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
+  },
+};

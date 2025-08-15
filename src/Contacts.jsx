@@ -44,7 +44,7 @@ export default function Contact() {
           <h2 className="text-xl md:text-5xl font-bold leading-tight mb-4">
             Ask whatever you have in your mind
           </h2>
-          <p className="text-gray-400 text-sm md:text-lg mb-10">
+          <p className="text-gray-300 text-sm md:text-lg mb-10">
             Whether you have questions or are ready to discuss your hiring needs,
             we’re here to help. Reach out today.
           </p>
