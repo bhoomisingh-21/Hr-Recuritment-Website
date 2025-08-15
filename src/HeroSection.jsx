@@ -175,9 +175,9 @@ const HeroSection = () => {
         ></div>
       )}
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Width */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-black/80 text-white z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-full bg-black/90 text-white z-50 transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -186,35 +186,28 @@ const HeroSection = () => {
             <X className="w-6 h-6" />
           </button>
         </div>
-        <nav className="flex flex-col gap-4 px-6">
-          <a href="#who-we-are" onClick={() => setMenuOpen(false)}>
-            How It Works
+        <nav className="flex flex-col gap-6 px-8 text-lg font-medium">
+          <a href="#who-we-are" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About Us</a>
+          <a href="#benefits" onClick={() => setMenuOpen(false)}>Benefits</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+
+          <a
+            href="#who-we-are"
+            onClick={() => setMenuOpen(false)}
+            className="mt-6 relative px-5 py-2 text-white bg-black rounded-md text-sm font-medium z-10 
+              border border-green-500 
+              shadow-[0_0_12px_rgba(34,197,94,0.6)] 
+              hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] 
+              transition overflow-hidden group flex items-center justify-center h-11"
+          >
+            <span className="absolute flex items-center gap-1 transition-all duration-700 ease-in-out group-hover:-translate-y-10">
+              Get Started <ArrowUpRight className="w-4 h-4 text-white" />
+            </span>
+            <span className="absolute flex items-center gap-1 translate-y-10 transition-all duration-700 ease-in-out group-hover:translate-y-0">
+              Get Started <ArrowUpRight className="w-4 h-4 text-white" />
+            </span>
           </a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
-            About Us
-          </a>
-          <a href="#benefits" onClick={() => setMenuOpen(false)}>
-            Benefits
-          </a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-         <a
-  href="#who-we-are"
-  onClick={() => setMenuOpen(false)}
-  className="mt-4 relative px-5 py-2 text-white bg-black rounded-md text-sm font-medium z-10 
-    border border-green-500 
-    shadow-[0_0_12px_rgba(34,197,94,0.6)] 
-    hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] 
-    transition overflow-hidden group flex items-center justify-center h-11"
->
-  <span className="absolute flex items-center gap-1 transition-all duration-700 ease-in-out group-hover:-translate-y-10">
-    Get Started <ArrowUpRight className="w-4 h-4 text-white" />
-  </span>
-  <span className="absolute flex items-center gap-1 translate-y-10 transition-all duration-700 ease-in-out group-hover:translate-y-0">
-    Get Started <ArrowUpRight className="w-4 h-4 text-white" />
-  </span>
-</a>
         </nav>
       </div>
 
