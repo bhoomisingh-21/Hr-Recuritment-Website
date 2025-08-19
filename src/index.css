@@ -15,25 +15,48 @@
   font-weight: 400;
 }
 
-
-.dot {
-  animation: floatDot 15s linear infinite;
+@keyframes scrollInfinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* adjust based on duplication */
 }
 
-html {
-  scroll-behavior: smooth;
+.animate-scroll {
+  animation: scrollInfinite 40s linear infinite;
 }
 
-@keyframes floatDot {
+@keyframes scroll {
   0% {
-    transform: translateY(0px);
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.6;
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(-100vh);
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+/* Floating upward animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh);
     opacity: 0;
   }
 }
+
+.dot {
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
