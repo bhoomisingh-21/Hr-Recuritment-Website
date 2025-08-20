@@ -84,10 +84,10 @@ const HeroSection = () => {
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
     {/* Particle dots */}
 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-  {[...Array(100)].map((_, i) => {
+  {[...Array(40)].map((_, i) => {
     const size = Math.random() * 2 + 1; // smaller dots (1px - 3px)
     const duration = Math.random() * 12 + 8; // 8s - 20s
-    const delay = Math.random() * 10; // up to 10s delay
+    const delay = Math.random() * 4; // up to 10s delay
     return (
       <div
         key={i}
@@ -108,19 +108,29 @@ const HeroSection = () => {
 
       {/* Glows */}
       <Glow
-        position="left-0"
-        top={window.innerWidth < 640 ? "60px" : "0"}
-        gradient="linear-gradient(135deg, rgba(34,197,94,0.9) 0%, rgba(34,197,94,0.3) 50%, rgba(0,0,0,0) 100%)"
-      />
+  position="left-0"
+  top={window.innerWidth < 640 ? "100px" : "0"} // push it lower
+  gradient={
+    window.innerWidth < 640
+      ? "linear-gradient(135deg, rgba(34,197,94,0.4) 0%, rgba(34,197,94,0.12) 50%, rgba(0,0,0,0) 100%)"
+      : "linear-gradient(135deg, rgba(34,197,94,0.7) 0%, rgba(34,197,94,0.3) 50%, rgba(0,0,0,0) 100%)"
+  }
+/>
       <Glow
         position="bottom-0 right-0"
         gradient="linear-gradient(315deg, rgba(34,197,94,0.45) 0%, rgba(34,197,94,0.18) 50%, rgba(34,197,94,0) 100%)"
       />
 
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 sm:left-1/2 sm:transform sm:-translate-x-1/2 z-30 w-full sm:w-[95%] max-w-6xl 
-          rounded-none sm:rounded-lg px-0 sm:px-6 py-3 flex justify-between items-center transition-all duration-300 border border-white/10 sm:mt-4`}
+     
+        <header
+  className={`fixed top-0 left-0 sm:left-1/2 sm:transform sm:-translate-x-1/2 z-30 
+    w-full sm:w-[95%] max-w-6xl 
+    rounded-none sm:rounded-lg 
+    px-3 sm:px-6 py-2 sm:py-3 
+    flex justify-between items-center 
+    transition-all duration-300 
+    border border-white/10 sm:mt-4`}
         style={{
           backgroundColor: scrolled
             ? "rgba(0, 0, 0, 0.4)"
@@ -152,13 +162,23 @@ const HeroSection = () => {
           <CTAButton href="#who-we-are" label="Get Started" />
         </div>
 
-        {/* Mobile Logo + Hamburger */}
-        <div className="w-full sm:hidden flex justify-between items-center pr-2 pl-4">
-          <img src="/assets/logo.png" alt="Logo" className="w-9 h-9 object-contain" />
-          <button onClick={() => setMenuOpen(true)} className="p-2" aria-label="Toggle Menu">
-            <Menu className="text-white w-9 h-9" strokeWidth={1} />
-          </button>
-        </div>
+       {/* Mobile Logo + Hamburger */}
+<div className="w-full sm:hidden flex items-center pl-4 pr-0">
+  <img
+    src="/assets/logo.png"
+    alt="Logo"
+    className="w-9 h-9 object-contain"
+  />
+  <div className="ml-auto">
+    <button
+      onClick={() => setMenuOpen(true)}
+      className="p-2"
+      aria-label="Toggle Menu"
+    >
+      <Menu className="text-white w-9 h-9" strokeWidth={1} />
+    </button>
+  </div>
+</div>
       </header>
 
       {/* Mobile Menu */}
@@ -198,21 +218,22 @@ const HeroSection = () => {
         className="relative z-20 flex flex-col items-center justify-center min-h-[80vh] px-6 text-center pt-24 sm:pt-28"
       >
         <motion.div
-          variants={item}
-          className="inline-flex items-center gap-2 px-4 py-[4px] rounded-[6px]
-                     bg-white/5 backdrop-blur-sm shadow-sm text-white text-[13px] font-light tracking-wide border border-white/10 mb-3"
-        >
-          <img src="/assets/logo.png" alt="Logo" className="h-[14px] w-[14px] object-contain" />
-          Helmet – Tech Recruitment Partner
-        </motion.div>
+  variants={item}
+  className="inline-flex items-center gap-2 px-4 py-[6px] rounded-lg
+             bg-black/40 backdrop-blur-md border border-white/20
+             text-white text-[13px] font-medium tracking-wide mb-4 shadow-sm"
+>
+  <img src="/assets/logo.png" alt="Logo" className="h-[14px] w-[14px] object-contain" />
+  Helmet – Tech Recruitment Partner
+</motion.div>
 
         <motion.h2
           variants={item}
-          className="text-[1.8rem] sm:text-[3.5rem] font-semibold text-white text-center"
+          className="text-[1.9rem] sm:text-[3.5rem] font-semibold text-white text-center"
           style={{ letterSpacing: "-0.00015em", lineHeight: "1.25" }}
         >
           <span className="block sm:hidden">
-            Power your growth <br /> with Helmet’s <br /> top tech talent
+            Power your <br /> tream growth with   <br /> top tech talent pool
           </span>
           <span className="hidden sm:block">
             Power your growth with <br /> top tech talent
@@ -221,10 +242,11 @@ const HeroSection = () => {
 
         <motion.p
           variants={item}
-          className="text-[16px] leading-[1.6] font-medium tracking-[-0.02em] mt-3 text-gray-300 text-center w-full sm:max-w-xl px-4 sm:text-lg sm:leading-relaxed sm:font-normal"
+         className="text-[16px] leading-[1.6] font-medium tracking-[-0.02em] mt-3 text-gray-300 text-center w-full sm:max-w-xl sm:px-4 px-1 sm:text-lg sm:leading-relaxed sm:font-normal"
+
         >
           <span className="block sm:hidden">
-            From sourcing to onboarding we,<br /> streamline hiring for engineers,<br /> and security experts.
+            From sourcing to onboarding we streamline<br /> hiring for engineers, Data Scientist, and<br />  security experts.
           </span>
           <span className="hidden sm:block">
             From sourcing to onboarding, we streamline hiring for engineers,<br /> scientists, and security experts.
@@ -232,7 +254,7 @@ const HeroSection = () => {
         </motion.p>
 
         {/* CTA */}
-        <motion.div variants={item} className="mt-6 flex justify-center">
+        <motion.div variants={item} className="mt-6 flex justify-center  space-x-6">
           <CTAButton href="#contact" label="Hire Now" />
         </motion.div>
       </motion.div>
@@ -241,13 +263,15 @@ const HeroSection = () => {
 <div className="w-full pt-2 sm:pt-4 -mt-8 sm:-mt-10 relative z-20">
   {/* Slide-in for heading */}
   <motion.h3
-    initial={{ y: 40, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="text-center text-lg sm:text-xl font-medium text-white mb-6 opacity-80"
-  >
-    Trusted By
-  </motion.h3>
+  initial={{ y: 40, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
+>
+  TRUSTED BY
+  <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-pink-400 to-purple-400 -translate-x-1/2"></span>
+</motion.h3>
+
 
   {/* L{/* Logos wrapper */}
 <div className="overflow-hidden py-6 relative w-full">
