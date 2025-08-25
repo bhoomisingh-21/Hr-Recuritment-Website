@@ -1,4 +1,3 @@
-// src/Contact.jsx
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
@@ -52,15 +51,15 @@ export default function Contact() {
           <div className="space-y-6 text-sm text-gray-300">
             <div className="flex items-center gap-3">
               <Mail className="w-5 h-5 text-green-400" />
-              <span>contact@yourdomain.com</span>
+              <span>hi@hirehelmet.com</span>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-green-400" />
-              <span>(123) 456-7890</span>
+              <span>(91) 9022234475 </span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-green-400" />
-              <span>Sector 5, Tech Park, Bengaluru</span>
+              <span>Mumbai, India</span>
             </div>
           </div>
         </motion.div>
@@ -85,7 +84,7 @@ export default function Contact() {
             <label className="block mb-1 text-sm text-gray-300">Email</label>
             <input
               type="email"
-              placeholder="john.doe@example.com"
+              placeholder="hi@hirehelmet.com"
               className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>

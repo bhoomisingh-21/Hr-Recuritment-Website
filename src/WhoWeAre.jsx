@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const mobileLines = [
-  "Helmet brings you pre-",
+  "Hire Helmet brings you pre-",
   "vetted tech talent. Built for",
   "founders, optimized for ",
   "outcomes. Less hassle.",
@@ -10,7 +10,7 @@ const mobileLines = [
 ];
 
 const desktopLines = [
-  "Helmet brings you pre-vetted tech talent.",
+  "Hire Helmet brings you pre-vetted tech talent.",
   "Built for founders, optimized for outcomes.",
   "Less hassle. More hires.",
 ];

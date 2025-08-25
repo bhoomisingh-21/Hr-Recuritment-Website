@@ -6,7 +6,7 @@ const items = [
     image: "/assets/row 1.png",
     title: "Share What You Need",
     description:
-      "Let us know the exact roles you're hiring for our team gets to work immediately to find you the right talent.",
+      "Share the exact roles you’re hiring for, and our team will start finding the right talent right away.",
   },
   {
     image: "/assets/row 2.png",
