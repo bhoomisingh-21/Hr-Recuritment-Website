@@ -236,7 +236,7 @@ const HeroSection = () => {
              text-white text-[13px] font-medium tracking-wide mb-4 shadow-sm"
         >
           <img src="/assets/logo.png" alt="Logo" className="h-[14px] w-[14px] object-contain" />
-          Hire Helmet – Tech Recruitment Partner
+          HireHelmet – Your Talent Partner
         </motion.div>
 
         <motion.h2
@@ -245,10 +245,10 @@ const HeroSection = () => {
           style={{ letterSpacing: "-0.00015em", lineHeight: "1.25" }}
         >
           <span className="block sm:hidden">
-            Power your <br /> tream growth with  <br /> top tech talent pool
+            Power your <br /> growth with  <br /> top tech talent pool
           </span>
           <span className="hidden sm:block">
-            Power your team growth with <br /> top tech talent
+            Power your growth with <br /> top tech talent
           </span>
         </motion.h2>
 
@@ -257,10 +257,10 @@ const HeroSection = () => {
           className="text-[16px] leading-[1.6] font-medium tracking-[-0.02em] mt-3 text-gray-300 text-center w-full sm:max-w-xl sm:px-4 px-1 sm:text-lg sm:leading-relaxed sm:font-normal"
         >
           <span className="block sm:hidden">
-            From sourcing to onboarding we streamline<br /> hiring for Techies, Data experts, Product managers, and Designers.
+            From sourcing to onboarding we streamline<br /> hiring for techies, data experts, product managers, and designers.
           </span>
           <span className="hidden sm:block">
-            From sourcing to onboarding, we streamline hiring for Techies, Data<br /> experts, Product managers, and Designers.
+            From sourcing to onboarding, we streamline hiring for techies, data<br /> experts, product managers, and designers.
           </span>
         </motion.p>
 
