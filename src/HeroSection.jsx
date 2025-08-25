@@ -19,20 +19,21 @@ const CTAButton = ({ label, href, onClick }) => (
   <a
     href={href}
     onClick={onClick}
-    className="relative px-6 py-3 text-white bg-black rounded-lg font-medium z-10 
+    className="relative px-8 py-4 text-white bg-black rounded-full font-medium z-10 
       border border-green-500 
       shadow-[0_0_12px_rgba(34,197,94,0.6)] 
       hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] 
-      transition overflow-hidden group flex items-center justify-center h-12 w-36"
+      transition overflow-hidden group flex items-center justify-center h-14 w-44"
   >
-    <span className="absolute flex items-center gap-1 transition-all duration-700 ease-in-out group-hover:-translate-y-12">
-      {label} <ArrowUpRight className="w-4 h-4" />
+    <span className="absolute flex items-center gap-2 transition-all duration-700 ease-in-out group-hover:-translate-y-14">
+      {label} <ArrowUpRight className="w-5 h-5" />
     </span>
-    <span className="absolute flex items-center gap-1 translate-y-12 transition-all duration-700 ease-in-out group-hover:translate-y-0">
-      {label} <ArrowUpRight className="w-4 h-4" />
+    <span className="absolute flex items-center gap-2 translate-y-14 transition-all duration-700 ease-in-out group-hover:translate-y-0">
+      {label} <ArrowUpRight className="w-5 h-5" />
     </span>
   </a>
 );
+
 
 // Reusable Glow Block
 const Glow = ({ position, gradient, top }) => (
@@ -78,20 +79,18 @@ const HeroSection = () => {
 
   // Role images for “Roles We Offer”
   const roles = [
-  "/assets/mob app dev.png",
-  "/assets/web developer.png",
-  "/assets/Product manger.png",
-  "/assets/security expert.png",
-  "/assets/Data scientist.png",
- 
-];
-
+    "/assets/mob app dev.png",
+    "/assets/web developer.png",
+    "/assets/Product manger.png",
+    "/assets/security expert.png",
+    "/assets/Data scientist.png",
+  ];
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
       {/* Particle dots */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {[...Array(40)].map((_, i) => {
+        {[...Array(50)].map((_, i) => {
           const size = Math.random() * 2 + 1;
           const duration = Math.random() * 12 + 8;
           const delay = Math.random() * 4;
@@ -130,12 +129,12 @@ const HeroSection = () => {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 sm:left-1/2 sm:transform sm:-translate-x-1/2 z-30 
-    w-full sm:w-[95%] max-w-6xl 
-    rounded-none sm:rounded-lg 
-    px-3 sm:px-6 py-2 sm:py-3 
-    flex justify-between items-center 
-    transition-all duration-300 
-    border border-white/10 sm:mt-4`}
+          w-full sm:w-[95%] max-w-6xl 
+          rounded-none sm:rounded-lg 
+          px-3 sm:px-6 py-2 sm:py-3 
+          flex justify-between items-center 
+          transition-all duration-300 
+          border border-white/10 sm:mt-4`}
         style={{
           backgroundColor: scrolled ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 0.35)",
           backdropFilter: "blur(20px)",
@@ -151,7 +150,7 @@ const HeroSection = () => {
         </div>
 
         {/* Nav Links */}
-        <nav className="hidden sm:flex gap-8 text-sm font-medium text-white">
+        <nav className="hidden sm:flex gap-8 text-base font-medium text-white">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -222,89 +221,81 @@ const HeroSection = () => {
         </nav>
       </div>
 
-      {/* Hero Content */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative z-20 flex flex-col items-center justify-center min-h-[80vh] px-6 text-center pt-24 sm:pt-28"
-      >
-        <motion.div
-          variants={item}
-          className="inline-flex items-center gap-2 px-4 py-[6px] rounded-lg
-             bg-black/40 backdrop-blur-md border border-white/20
-             text-white text-[13px] font-medium tracking-wide mb-4 shadow-sm"
-        >
-          <img src="/assets/logo.png" alt="Logo" className="h-[14px] w-[14px] object-contain" />
-          HireHelmet – Your Talent Partner
-        </motion.div>
+ 
+      
+       {/* Hero Content */}
+<motion.div
+  variants={container}
+  initial="hidden"
+  animate="show"
+  className="flex flex-col items-center justify-center text-center px-6 min-h-screen -mt-16 sm:mt-0 sm:pt-32"
+>
 
-        <motion.h2
-          variants={item}
-          className="text-[1.9rem] sm:text-[3.5rem] font-semibold text-white text-center"
-          style={{ letterSpacing: "-0.00015em", lineHeight: "1.25" }}
-        >
-          <span className="block sm:hidden">
-            Power your <br /> growth with  <br /> top tech talent pool
-          </span>
-          <span className="hidden sm:block">
-            Power your growth with <br /> top tech talent
-          </span>
-        </motion.h2>
+  <motion.h1
+    variants={item}
+    className="text-[38px] sm:text-5xl lg:text-6xl font-semibold leading-snug mb-4"
+    style={{ fontFamily: "'Uncut Sans', sans-serif", fontWeight: 600 }}
+  >
+    Power Your Growth With <br /> Top Tech Talent
+  </motion.h1>
 
-        <motion.p
-          variants={item}
-          className="text-[16px] leading-[1.6] font-medium tracking-[-0.02em] mt-3 text-gray-300 text-center w-full sm:max-w-xl sm:px-4 px-1 sm:text-lg sm:leading-relaxed sm:font-normal"
-        >
-          <span className="block sm:hidden">
-            From sourcing to onboarding we streamline<br /> hiring for techies, data experts, product managers, and designers.
-          </span>
-          <span className="hidden sm:block">
-            From sourcing to onboarding, we streamline hiring for techies, data<br /> experts, product managers, and designers.
-          </span>
-        </motion.p>
+  <motion.h2
+    variants={item}
+    className="text-3xl sm:text-4xl lg:text-4xl font-medium text-gray-400 mb-4"
+    style={{ fontFamily: "'Uncut Sans', sans-serif", fontWeight: 500 }}
+  >
+    We’ve Got You.
+  </motion.h2>
+<br />
+  <motion.p
+    variants={item}
+    className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-xl mb-8"
+    style={{ fontFamily: "'Uncut Sans', sans-serif" }}
+  >
+    From Sourcing to on-boarding We streamline hiring for techies, data experts, product managers, and designers.
+  </motion.p>
 
-        {/* CTA */}
-        <motion.div variants={item} className="mt-6 flex justify-center  space-x-6">
-          <CTAButton
-            href="#contact"
-            label="Hire Now"
-            onClick={(e) => handleSmoothScroll(e, "#contact")}
-          />
-        </motion.div>
-      </motion.div>
+  <motion.div variants={item}>
+    <CTAButton
+      href="#contact"
+      label="Start Hiring"
+      onClick={(e) => handleSmoothScroll(e, "#contact")}
+    />
+  </motion.div>
+</motion.div>
+
 
       {/* Roles We Offer */}
-      <div className="w-full pt-2 sm:pt-4 -mt-8 sm:-mt-10 relative z-20">
-  <motion.h3
-    initial={{ y: 40, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
-  >
-    ROLES WE OFFER
-    <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-green-400 to-blue-400 -translate-x-1/2"></span>
-  </motion.h3>
+      <div className="w-full pt-0 sm:pt-9 -mt-32 sm:-mt-10 relative z-20">
 
-  <div className="overflow-hidden py-6 relative w-full">
-    <motion.div
-      initial={{ x: 100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-      className="flex animate-scroll gap-8"
-    >
-      {[...roles, ...roles, ...roles].map((role, index) => (
-        <img
-          key={index}
-          src={role}
-          alt="role"
-          className="h-12 sm:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition mx-4"
-        />
-      ))}
-    </motion.div>
-  </div>
-</div>
+        <motion.h3
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
+        >
+          ROLES WE OFFER
+          <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-green-400 to-blue-400 -translate-x-1/2"></span>
+        </motion.h3>
 
+        <div className="overflow-hidden py-6 relative w-full">
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+            className="flex animate-scroll gap-8"
+          >
+            {[...roles, ...roles, ...roles].map((role, index) => (
+              <img
+                key={index}
+                src={role}
+                alt="role"
+                className="h-12 sm:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition mx-4"
+              />
+            ))}
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 };
