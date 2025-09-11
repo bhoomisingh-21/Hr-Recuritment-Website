@@ -21,11 +21,11 @@ export default function Contact() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
           className="inline-block text-sm px-5 py-1.5 rounded-md 
-                   text-gray-300 bg-black 
-                   border border-green-500 
-                   shadow-[0_0_12px_rgba(34,197,94,0.6)] 
-                   hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] 
-                   transition duration-300"
+                     text-gray-300 bg-black 
+                     border border-green-500 
+                     shadow-[0_0_12px_rgba(34,197,94,0.6)] 
+                     hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] 
+                     transition duration-300"
         >
           Contact
         </motion.div>
@@ -76,31 +76,44 @@ export default function Contact() {
             <label className="block mb-1 text-sm text-gray-300">Name</label>
             <input
               type="text"
-              placeholder="John Doe"
-              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Khushboo Gadhia"
+              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
+
           <div>
             <label className="block mb-1 text-sm text-gray-300">Email</label>
             <input
               type="email"
               placeholder="hi@hirehelmet.com"
-              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
+
+          {/* New Phone Number Field */}
+          <div>
+            <label className="block mb-1 text-sm text-gray-300">Phone Number</label>
+            <input
+              type="tel"
+              placeholder="(91) 9022234475"
+              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+
           <div>
             <label className="block mb-1 text-sm text-gray-300">Message</label>
             <textarea
               rows="5"
               placeholder="Hi, I am reaching out for..."
-              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             ></textarea>
           </div>
+
           <button
             type="submit"
             className="w-full border border-green-500 text-green-500 font-semibold py-2 rounded-md 
-               hover:shadow-[0_0_10px_rgba(34,197,94,0.7)] 
-               transition duration-300"
+                   hover:shadow-[0_0_10px_rgba(34,197,94,0.7)] 
+                   transition duration-300"
           >
             Submit
           </button>
