@@ -8,19 +8,19 @@ const benefits = [
     icon: <TrendingUp className="w-6 h-6 text-green-400" />,
     title: "Faster Hiring",
     description:
-      "Skip lengthy screening. Get qualified candidates ready to interview in 48 hours.",
+      "Skip lengthy screening. Get qualified candidates ready to interview in 48 hours",
   },
   {
     icon: <Check className="w-6 h-6 text-green-400" />,
     title: "Better Matches",
     description:
-      "We pre-vet for skills and culture fit so you only meet the best people.",
+      "We pre-vet for skills and culture fit so you only meet the best people",
   },
   {
     icon: <Clock className="w-6 h-6 text-green-400" />,
     title: "Save Time & Money",
     description:
-      "Our flat 8% fee and done-for-you process save you weeks of effort.",
+      "Our flat 8% fee and done-for-you process save you weeks of effort",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function Benefit() {
 
         {/* Subheading */}
         <p className="text-gray-300 text-base md:text-lg mb-16">
-          Discover the key benefits of partnering with us.
+          Discover the key benefits of partnering with us
         </p>
 
         {/* Benefit Cards */}

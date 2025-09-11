@@ -79,11 +79,13 @@ const HeroSection = () => {
 
   // Role images for “Roles We Offer”
   const roles = [
-    "/assets/mob app dev.png",
-    "/assets/web developer.png",
-    "/assets/Product manger.png",
-    "/assets/security expert.png",
-    "/assets/Data scientist.png",
+    "/assets/Group 1.svg",
+    "/assets/Group 2.svg",
+    "/assets/Group 4.svg",
+    "/assets/Group 6.svg",
+    "/assets/Designer.svg",
+    
+   
   ];
 
   return (
@@ -244,7 +246,7 @@ const HeroSection = () => {
     className="text-3xl sm:text-4xl lg:text-4xl font-medium text-gray-400 mb-4"
     style={{ fontFamily: "'Uncut Sans', sans-serif", fontWeight: 500 }}
   >
-    We’ve Got You.
+    We’ve Got You
   </motion.h2>
 <br />
   <motion.p
@@ -252,7 +254,7 @@ const HeroSection = () => {
     className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-xl mb-8"
     style={{ fontFamily: "'Uncut Sans', sans-serif" }}
   >
-    From Sourcing to on-boarding We streamline hiring for techies, data experts, product managers, and designers.
+    From sourcing to onboarding, we streamline hiring for techies, data experts, product managers, and designers
   </motion.p>
 
   <motion.div variants={item}>
@@ -266,36 +268,37 @@ const HeroSection = () => {
 
 
       {/* Roles We Offer */}
-      <div className="w-full pt-0 sm:pt-9 -mt-32 sm:-mt-10 relative z-20">
+<div className="w-full pt-0 sm:pt-9 -mt-32 sm:-mt-10 relative z-20">
+  <motion.h3
+    initial={{ y: 40, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
+  >
+    ROLES WE OFFER
+    <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-green-400 to-blue-400 -translate-x-1/2"></span>
+  </motion.h3>
 
-        <motion.h3
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
-        >
-          ROLES WE OFFER
-          <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-green-400 to-blue-400 -translate-x-1/2"></span>
-        </motion.h3>
+  {/* Scroller */}
+<div className="overflow-hidden relative w-full py-6">
+  <div className="flex w-max animate-marquee gap-24 items-center">
+    {[...roles, ...roles].map((role, index) => (
+      <img
+        key={index}
+        src={role}
+        alt="role"
+        className={`h-5 sm:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition ${
+          role.includes("Designer") ? "h-9 sm:h-15" : ""
+        }`}
+      />
+    ))}
+  </div>
+</div>
 
-        <div className="overflow-hidden py-6 relative w-full">
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-            className="flex animate-scroll gap-8"
-          >
-            {[...roles, ...roles, ...roles].map((role, index) => (
-              <img
-                key={index}
-                src={role}
-                alt="role"
-                className="h-12 sm:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition mx-4"
-              />
-            ))}
-          </motion.div>
-        </div>
-      </div>
+
+
+</div>
+
     </div>
   );
 };

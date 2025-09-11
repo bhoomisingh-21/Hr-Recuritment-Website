@@ -6,13 +6,13 @@ const mobileLines = [
   "vetted tech talent Built for",
   "founders, optimized for ",
   "outcomes Less hassle.",
-  "More hires.",
+  "More hires",
 ];
 
 const desktopLines = [
   "HireHelmet brings you pre-vetted tech talent",
   "Built for founders, optimized for outcomes",
-  "Less hassle. More hires.",
+  "Less hassle. More hires",
 ];
 
 export default function WhoWeAre() {

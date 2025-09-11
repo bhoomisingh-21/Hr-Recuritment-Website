@@ -6,31 +6,31 @@ const items = [
     image: "/assets/row 1.png",
     title: "Share What You Need",
     description:
-      "Share the exact roles you’re hiring for, and our team will start finding the right talent right away.",
+      "Share the exact roles you’re hiring for, and our team will start finding the right talent right away",
   },
   {
     image: "/assets/row 2.png",
     title: "Get a Dedicated Hiring Expert",
     description:
-      "Your account manager will connect within 24 hours to understand your needs and plan the best hiring strategy.",
+      "Your account manager will connect within 24 hours to understand your needs and plan the best hiring strategy",
   },
   {
     image: "/assets/row 3.png",
     title: "We Schedule the Interviews",
     description:
-      "We shortlist and share thoroughly vetted candidates and take care of scheduling interviews saving you hours of effort.",
+      "We shortlist and share thoroughly vetted candidates and take care of scheduling interviews saving you hours of effort",
   },
   {
     image: "/assets/last image.png",
     title: "Transparent Pricing & Guarantee",
     description:
-      "Our flat 8% success fee keeps costs predictable, and with a 45-day replacement guarantee, your hiring is always secure and stress-free.",
+      "Our flat 8% success fee keeps costs predictable, and with a 45-day replacement guarantee, your hiring is always secure and stress-free",
   },
   {
     image: "/assets/last second.png",
     title: "Ongoing Support",
     description:
-      "Even after placement, our team is here to ensure smooth onboarding and long-term success for both you and the hire.",
+      "Even after placement, our team is here to ensure smooth onboarding and long-term success for both you and the hire",
   },
 ];
 
