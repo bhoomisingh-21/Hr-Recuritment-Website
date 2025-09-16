@@ -32,7 +32,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 relative z-10">
-        {/* Left Section with delayed slide-in from left */}
+        {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -55,7 +55,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-green-400" />
-              <span>(91) 9022234475 </span>
+              <span>(91) 9022234475</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="w-5 h-5 text-green-400" />
@@ -64,19 +64,27 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Right Section (Form) with delayed slide-in from right */}
+        {/* Right Section (Form) */}
         <motion.form
+          name="contact"              // 👈 Required for Netlify
+          method="POST"               // 👈 Required for Netlify
+          data-netlify="true"         // 👈 Enables Netlify form capture
+          className="space-y-6"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
           viewport={{ once: true }}
-          className="space-y-6"
         >
+          {/* Hidden input is required */}
+          <input type="hidden" name="form-name" value="contact" />
+
           <div>
             <label className="block mb-1 text-sm text-gray-300">Name</label>
             <input
               type="text"
+              name="name"
               placeholder="Khushboo Gadhia"
+              required
               className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
@@ -85,16 +93,18 @@ export default function Contact() {
             <label className="block mb-1 text-sm text-gray-300">Email</label>
             <input
               type="email"
+              name="email"
               placeholder="hi@hirehelmet.com"
+              required
               className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
 
-          {/* New Phone Number Field */}
           <div>
             <label className="block mb-1 text-sm text-gray-300">Phone Number</label>
             <input
               type="tel"
+              name="phone"
               placeholder="(91) 9022234475"
               className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
             />
@@ -103,6 +113,7 @@ export default function Contact() {
           <div>
             <label className="block mb-1 text-sm text-gray-300">Message</label>
             <textarea
+              name="message"
               rows="5"
               placeholder="Hi, I am reaching out for..."
               className="w-full bg-[#111111] border border-gray-700 px-4 py-2 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
