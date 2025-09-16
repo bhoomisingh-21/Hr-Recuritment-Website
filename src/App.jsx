@@ -6,6 +6,7 @@ import Benefits from "./Benefits"
 import Contacts from "./Contacts"
 import Footer from "./Footer"
 import './index.css';
+import ThankYou from "./thankyou";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Benefits />
       <Contacts />
+      <ThankYou />
       <Footer />
     </div>
   );
