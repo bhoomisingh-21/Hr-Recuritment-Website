@@ -6,7 +6,7 @@ import About from "./About";
 import Benefits from "./Benefits";
 import Contacts from "./Contacts";
 import Footer from "./Footer";
-import Thankyou from "./Thankyou"; // 👈 correct casing
+import Thankyou from "./Thankyou";
 
 function App() {
   return (
