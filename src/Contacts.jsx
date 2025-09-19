@@ -1,8 +1,30 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Contact() {
+  const navigate = useNavigate();
+
+  // handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    // Create FormData for Netlify
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: formData,
+    })
+      .then(() => {
+        navigate("/thankyou"); // 👈 React Router navigation (works locally)
+      })
+      .catch((error) => alert(error));
+  };
+
   return (
     <section
       id="contact"
@@ -66,17 +88,18 @@ export default function Contact() {
 
         {/* Right Section (Form) */}
         <motion.form
-          name="contact"              // 👈 Required for Netlify
-          method="POST"               // 👈 Required for Netlify
-          data-netlify="true"         // 👈 Enables Netlify form capture
-          action="/thankyou"  
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit} // 👈 use handler instead of action
           className="space-y-6"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
           viewport={{ once: true }}
         >
-          {/* Hidden input is required */}
+          {/* Hidden input required by Netlify */}
           <input type="hidden" name="form-name" value="contact" />
 
           <div>

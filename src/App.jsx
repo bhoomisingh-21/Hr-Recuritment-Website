@@ -1,24 +1,35 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroSection from "./HeroSection";
 import WhoWeAre from "./WhoWeAre";
 import About from "./About";
-import Benefits from "./Benefits"
-import Contacts from "./Contacts"
-import Footer from "./Footer"
-import './index.css';
-import ThankYou from "./thankyou";
+import Benefits from "./Benefits";
+import Contacts from "./Contacts";
+import Footer from "./Footer";
+import ThankYou from "./ThankYou"; // 👈 correct casing
 
 function App() {
   return (
-    <div className="App">
-      <HeroSection />
-      <WhoWeAre />
-      <About />
-      <Benefits />
-      <Contacts />
-      <ThankYou />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+            <>
+              <HeroSection />
+              <WhoWeAre />
+              <About />
+              <Benefits />
+              <Contacts />
+              <Footer />
+            </>
+          }
+        />
+        {/* Thank You Page */}
+        <Route path="/thankyou" element={<ThankYou />} />
+      </Routes>
+    </Router>
   );
 }
 

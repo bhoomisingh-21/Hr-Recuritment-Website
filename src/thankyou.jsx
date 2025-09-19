@@ -33,7 +33,7 @@ export default function ThankYou() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="text-lg text-green-300 mt-4 text-center max-w-md"
+        className="text-lg text-white mt-4 text-center max-w-md"
       >
         Your form has been submitted successfully. 🎉  
         We’ll get back to you soon!
