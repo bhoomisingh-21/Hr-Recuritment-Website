@@ -6,7 +6,7 @@ import About from "./About";
 import Benefits from "./Benefits";
 import Contacts from "./Contacts";
 import Footer from "./Footer";
-import ThankYou from "./ThankYou"; // 👈 correct casing
+import Thankyou from "./Thankyou"; // 👈 correct casing
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
           }
         />
         {/* Thank You Page */}
-        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/thankyou" element={<Thankyou />} />
       </Routes>
     </Router>
   );

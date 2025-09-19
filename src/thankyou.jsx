@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Confetti from "react-confetti";
 import { CheckCircle } from "lucide-react";
 
-export default function ThankYou() {
+export default function Thankyou() {
   const [showConfetti, setShowConfetti] = useState(true);
 
   // Auto stop confetti after 5s
