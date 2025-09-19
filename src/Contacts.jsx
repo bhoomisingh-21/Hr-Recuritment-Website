@@ -99,6 +99,11 @@ export default function Contact() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
           viewport={{ once: true }}
         >
+          <p className="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
           {/* Hidden input required by Netlify */}
           <input type="hidden" name="form-name" value="contact" />
 
