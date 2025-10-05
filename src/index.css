@@ -1,12 +1,8 @@
 @import "tailwindcss";
 
-/* index.css → Add Google Font */
-/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap');
-
-body {
-  font-family: 'Manrope', sans-serif;
-} */
-
+/* I've added !important to some key properties to
+  ensure they override any conflicting Tailwind styles.
+*/
 
 body {
   font-family: 'Untitled Sans', system-ui, sans-serif;
@@ -45,33 +41,56 @@ html {
   animation: scroll 20s linear infinite;
 }
 
-/* Floating upward animation */
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
+
+.gradient-glow {
+  position: fixed !important;
+  width: 50vw !important;
+  height: 50vw !important;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0) 70%);
+  filter: blur(150px) !important;
+  pointer-events: none;
+  z-index: 0 !important;
+  opacity: 0.7 !important;
 }
 
-.dot {
-  animation-name: floatUp;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
+/* Tailwind CSS animation for marquee effect */
 @keyframes marquee {
-  0%   { transform: translateX(0); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite !important;
+}
+
+.glow-below {
+  position: absolute;
+  top: 180%; /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 550px;   /* width of glow */
+  height: 200px;  /* height of glow */
+  background: 
+    radial-gradient(circle at 40% 30%, rgba(0, 220, 255, 1), transparent 55%),  /* bright blue core */
+    radial-gradient(circle at 65% 70%, rgba(0, 255, 180, 0.6), transparent 70%), /* bright green accent */
+    radial-gradient(circle at 50% 90%, rgba(0, 150, 255, 0.5), transparent 70%);  /* lighter blue for depth */
+  filter: blur(100px);  /* increase blur for luminous effect */
+  opacity: 1;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+
+
+@media (max-width: 640px) {
+  .glow-below {
+    width: 250px;
+    height: 120px;
+    top: 130%; /* more space on mobile */
+    filter: blur(60px);
+  }
 }
 

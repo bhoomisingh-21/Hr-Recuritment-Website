@@ -11,10 +11,15 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
-// Reusable CTA Button
+// CTA Button
 const CTAButton = ({ label, href, onClick }) => (
   <a
     href={href}
@@ -32,15 +37,6 @@ const CTAButton = ({ label, href, onClick }) => (
       {label} <ArrowUpRight className="w-5 h-5" />
     </span>
   </a>
-);
-
-
-// Reusable Glow Block
-const Glow = ({ position, gradient, top }) => (
-  <div
-    className={`absolute ${position} w-[900px] h-[180px] z-0 pointer-events-none`}
-    style={{ top, background: gradient, filter: "blur(120px)" }}
-  />
 );
 
 const HeroSection = () => {
@@ -77,58 +73,17 @@ const HeroSection = () => {
     setMenuOpen(false);
   };
 
-  // Role images for “Roles We Offer”
   const roles = [
     "/assets/Group 1.svg",
     "/assets/Group 2.svg",
     "/assets/Group 4.svg",
     "/assets/Group 6.svg",
     "/assets/Designer.svg",
-    
-   
   ];
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Particle dots */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {[...Array(50)].map((_, i) => {
-          const size = Math.random() * 2 + 1;
-          const duration = Math.random() * 12 + 8;
-          const delay = Math.random() * 4;
-          return (
-            <div
-              key={i}
-              className="dot absolute bg-white rounded-full opacity-60"
-              style={{
-                top: `${90 + Math.random() * 20}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                animationDuration: `${duration}s`,
-                animationDelay: `${delay}s`,
-              }}
-            />
-          );
-        })}
-      </div>
-
-      {/* Glows */}
-      <Glow
-        position="left-0"
-        top={window.innerWidth < 640 ? "100px" : "0"}
-        gradient={
-          window.innerWidth < 640
-            ? "linear-gradient(135deg, rgba(34,197,94,0.4) 0%, rgba(34,197,94,0.12) 50%, rgba(0,0,0,0) 100%)"
-            : "linear-gradient(135deg, rgba(34,197,94,0.7) 0%, rgba(34,197,94,0.3) 50%, rgba(0,0,0,0) 100%)"
-        }
-      />
-      <Glow
-        position="bottom-0 right-0"
-        gradient="linear-gradient(315deg, rgba(34,197,94,0.45) 0%, rgba(34,197,94,0.18) 50%, rgba(34,197,94,0) 100%)"
-      />
-
-      {/* Header */}
+      {/* === HEADER === */}
       <header
         className={`fixed top-0 left-0 sm:left-1/2 sm:transform sm:-translate-x-1/2 z-30 
           w-full sm:w-[95%] max-w-6xl 
@@ -175,7 +130,7 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Mobile Logo + Hamburger */}
+        {/* Mobile Header */}
         <div className="w-full sm:hidden flex items-center pl-4 pr-0">
           <img src="/assets/logo.png" alt="Logo" className="w-9 h-9 object-contain" />
           <div className="ml-auto">
@@ -194,9 +149,10 @@ const HeroSection = () => {
         ></div>
       )}
       <div
-        className={`fixed top-0 right-0 h-full w-full bg-black/90 text-white z-50 transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-full bg-black/90 text-white z-50 
+          transform transition-transform duration-300 ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex justify-end p-4">
           <button onClick={() => setMenuOpen(false)}>
@@ -205,11 +161,7 @@ const HeroSection = () => {
         </div>
         <nav className="flex flex-col gap-6 px-8 text-lg font-medium">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleSmoothScroll(e, link.href)}
-            >
+            <a key={link.name} href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)}>
               {link.name}
             </a>
           ))}
@@ -223,82 +175,113 @@ const HeroSection = () => {
         </nav>
       </div>
 
- 
-      
-       {/* Hero Content */}
-<motion.div
-  variants={container}
-  initial="hidden"
-  animate="show"
-  className="flex flex-col items-center justify-center text-center px-6 min-h-screen -mt-16 sm:mt-0 sm:pt-32"
->
+      {/* Hero Content */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative flex flex-col items-center justify-center text-center px-6 min-h-screen 
+                   pt-3 sm:pt-40 lg:pt-40 gap-3 sm:gap-4 z-10"
+      >
+        {/* Avatars + stars + text */}
+        <motion.div
+          variants={item}
+          className="flex flex-col items-center text-gray-300 text-sm relative -top-8 sm:top-4" // 👈 on desktop slightly down
+        >
+          <div className="flex flex-col items-center sm:flex-row sm:items-center sm:gap-2">
+            {/* Avatars */}
+            <div className="flex items-center">
+              <div className="flex -space-x-2 items-center">
+                <img
+                  src="https://images.stockcake.com/public/1/b/2/1b233006-c7d5-4955-8499-b591153b7fd7_large/confident-business-professional-stockcake.jpg"
+                  alt=""
+                  className="w-7 h-7 rounded-full border border-black"
+                />
+                <img
+                  src="https://media.istockphoto.com/id/1036079862/photo/i-have-all-the-determination-to-succeed-big.jpg?s=612x612&w=0&k=20&c=AJGXyAarUUDQbgh_LhuqfHXeZQtGZy9P-y7KMb5jkAo="
+                  alt=""
+                  className="w-7 h-7 rounded-full border border-black"
+                />
+                <img
+                  src="https://media.istockphoto.com/id/1363118407/photo/portrait-of-young-businessman.jpg?s=612x612&w=0&k=20&c=e9xjo1AdlIbr7ttZe3iBG3CBWKUBwdTMLkPus9DxA_s="
+                  alt=""
+                  className="w-7 h-7 rounded-full border border-black"
+                />
+                <img
+                  src="https://img.freepik.com/free-photo/african-american-business-woman-by-window_1303-10869.jpg"
+                  alt=""
+                  className="w-7 h-7 rounded-full border border-black"
+                />
+              </div>
 
-  <motion.h1
-    variants={item}
-    className="text-[38px] sm:text-5xl lg:text-6xl font-semibold leading-snug mb-4"
-    style={{ fontFamily: "'Uncut Sans', sans-serif", fontWeight: 600 }}
-  >
-    Power Your Growth With <br /> Top Tech Talent
-  </motion.h1>
+              {/* Stars — perfectly aligned */}
+              <span className="ml-2 text-base sm:text-lg leading-none flex items-center justify-center">
+                ★★★★★
+              </span>
+            </div>
 
-  <motion.h2
-    variants={item}
-    className="text-3xl sm:text-4xl lg:text-4xl font-medium text-gray-400 mb-4"
-    style={{ fontFamily: "'Uncut Sans', sans-serif", fontWeight: 500 }}
-  >
-    We’ve Got You
-  </motion.h2>
-<br />
-  <motion.p
-    variants={item}
-    className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-xl mb-8"
-    style={{ fontFamily: "'Uncut Sans', sans-serif" }}
-  >
-    From sourcing to onboarding, we streamline hiring for techies, data experts, product managers, and designers
-  </motion.p>
+            {/* Text below stars */}
+            <span className="block mt-0.5 text-xs sm:text-sm text-gray-400 sm:mt-1">
+              200+ businesses scaled
+            </span>
+          </div>
+        </motion.div>
 
-  <motion.div variants={item}>
-    <CTAButton
-      href="#contact"
-      label="Start Hiring"
-      onClick={(e) => handleSmoothScroll(e, "#contact")}
-    />
-  </motion.div>
-</motion.div>
+        {/* Headline */}
+        <motion.h1
+          variants={item}
+          className="text-[32px] sm:text-6xl font-semibold leading-snug mb-3 sm:mb-4"
+          style={{ fontFamily: "'Uncut Sans', sans-serif", fontWeight: 600 }}
+        >
+          Power your <span className="italic">growth</span> <br /> with helmet's top tech talent
+        </motion.h1>
 
+        {/* Subtext */}
+        <motion.p
+          variants={item}
+          className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-xl mb-6 sm:mb-6"
+          style={{ fontFamily: "'Uncut Sans', sans-serif" }}
+        >
+          From sourcing to onboarding, we streamline hiring for techies, data analysts, security
+          experts, product managers, and designers.
+        </motion.p>
 
-      {/* Roles We Offer */}
-<div className="w-full pt-0 sm:pt-9 -mt-32 sm:-mt-10 relative z-20">
-  <motion.h3
-    initial={{ y: 40, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
-  >
-    ROLES WE OFFER
-    <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-green-400 to-blue-400 -translate-x-1/2"></span>
-  </motion.h3>
+        {/* CTA */}
+        <motion.div variants={item} className="relative w-full flex flex-col items-center justify-center">
+          <CTAButton
+            href="#contact"
+            label="Book a call"
+            onClick={(e) => handleSmoothScroll(e, "#contact")}
+          />
+          <div className="glow-below"></div>
+        </motion.div>
+      </motion.div>
 
-  {/* Scroller */}
-<div className="overflow-hidden relative w-full py-6">
-  <div className="flex w-max animate-marquee gap-24 items-center">
-    {[...roles, ...roles].map((role, index) => (
-      <img
-        key={index}
-        src={role}
-        alt="role"
-        className={`h-5 sm:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition ${
-          role.includes("Designer") ? "h-9 sm:h-15" : ""
-        }`}
-      />
-    ))}
-  </div>
-</div>
+      {/* Roles Section */}
+      <div className="w-full -mt-7 sm:mt-32 relative z-20">
+        <motion.h3
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative text-center text-sm sm:text-base tracking-[0.2em] uppercase font-semibold text-gray-300 pb-3"
+        >
+          ROLES WE OFFER
+          <span className="absolute left-1/2 bottom-0 w-12 h-[2px] bg-gradient-to-r from-green-400 to-green-600 -translate-x-1/2"></span>
+        </motion.h3>
 
-
-
-</div>
-
+        <div className="overflow-hidden relative w-full py-6">
+          <div className="flex w-max animate-marquee gap-24 items-center">
+            {[...roles, ...roles].map((role, index) => (
+              <img
+                key={index}
+                src={role}
+                alt="role"
+                className="w-auto object-contain opacity-90 hover:opacity-100 transition h-8 sm:h-10"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
