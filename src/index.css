@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* I've added !important to some key properties to
-  ensure they override any conflicting Tailwind styles.
-*/
-
 body {
   font-family: 'Untitled Sans', system-ui, sans-serif;
 }
@@ -42,7 +38,7 @@ html {
 }
 
 
-.gradient-glow {
+/* .gradient-glow {
   position: fixed !important;
   width: 50vw !important;
   height: 50vw !important;
@@ -52,7 +48,7 @@ html {
   pointer-events: none;
   z-index: 0 !important;
   opacity: 0.7 !important;
-}
+} */
 
 /* Tailwind CSS animation for marquee effect */
 @keyframes marquee {
@@ -94,3 +90,41 @@ html {
   }
 }
 
+
+/* CSS Particle Styles */
+.particles-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: var(--rand-size);
+  height: var(--rand-size);
+  background: rgba(255, 255, 255, var(--rand-opacity));
+  border-radius: 50%;
+  top: calc(100% * var(--rand-top));
+  left: calc(100% * var(--rand-left));
+  animation: float var(--rand-duration) linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: var(--rand-opacity);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: calc(var(--rand-opacity) * 0.6);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: var(--rand-opacity);
+  }
+}

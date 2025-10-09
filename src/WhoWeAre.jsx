@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const mobileLines = [
   "HireHelmet brings you pre-",
-  "vetted tech talent Built for",
+  "vetted tech talent. Built for",
   "founders, optimized for ",
-  "outcomes Less hassle.",
+  "outcomes. Less hassle.",
   "More hires",
 ];
 
