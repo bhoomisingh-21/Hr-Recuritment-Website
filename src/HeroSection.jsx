@@ -19,17 +19,19 @@ const CSSParticles = () => {
     <div className="particles-wrapper">
       {[...Array(150)].map((_, i) => {
         const style = {
-          "--rand-top": Math.random(),
-          "--rand-left": Math.random(),
+          "--rand-left": Math.random() * 100 + "vw",
           "--rand-opacity": 0.2 + Math.random() * 0.8,
-          "--rand-size": 1 + Math.random() * 2 + "px",
-          "--rand-duration": 4 + Math.random() * 10 + "s",
+          "--rand-size": 1 + Math.random() * 3 + "px",
+          "--rand-duration": 5 + Math.random() * 12 + "s",
+          "--rand-delay": Math.random() * 5 + "s",
         };
         return <span key={i} className="particle" style={style} />;
       })}
     </div>
   );
 };
+
+
 
 
 

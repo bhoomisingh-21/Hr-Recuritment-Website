@@ -91,13 +91,12 @@ html {
 }
 
 
-/* CSS Particle Styles */
 .particles-wrapper {
   position: absolute;
-  top: 0;
+  bottom: -50px;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
@@ -105,26 +104,34 @@ html {
 
 .particle {
   position: absolute;
+  bottom: 0;
+  left: var(--rand-left);
   width: var(--rand-size);
   height: var(--rand-size);
   background: rgba(255, 255, 255, var(--rand-opacity));
   border-radius: 50%;
-  top: calc(100% * var(--rand-top));
-  left: calc(100% * var(--rand-left));
-  animation: float var(--rand-duration) linear infinite;
+
+  /* Make them glow */
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8),
+              0 0 12px rgba(255, 255, 255, 0.6),
+              0 0 18px rgba(255, 255, 255, 0.4);
+
+  animation: floatUp var(--rand-duration) linear infinite, twinkle 2s ease-in-out infinite;
+  animation-delay: var(--rand-delay);
 }
 
-@keyframes float {
+@keyframes floatUp {
   0% {
     transform: translateY(0) scale(1);
     opacity: var(--rand-opacity);
   }
   50% {
-    transform: translateY(-30px) scale(1.2);
-    opacity: calc(var(--rand-opacity) * 0.6);
+    transform: translateY(-50vh) scale(1.2);
+    opacity: calc(var(--rand-opacity) * 0.7);
   }
   100% {
-    transform: translateY(0) scale(1);
-    opacity: var(--rand-opacity);
+    transform: translateY(-120vh) scale(1);
+    opacity: 0;
   }
 }
+
