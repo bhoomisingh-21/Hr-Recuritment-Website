@@ -20,7 +20,7 @@ const benefits = [
     icon: <Clock className="w-6 h-6 text-green-400" />,
     title: "Save Time & Money",
     description:
-      "Our flat 8% fee and done-for-you process save you weeks of effort",
+      "Our flat 10% fee and done-for-you process save you weeks of effort",
   },
 ];
 

@@ -7,6 +7,8 @@ import Benefits from "./Benefits";
 import Contacts from "./Contacts";
 import Footer from "./Footer";
 import Thankyou from "./Thankyou";
+import Founder from "./Founder";
+import HowWeAreDifferent from "./HowWeAreDifferent ";
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
               <WhoWeAre />
               <About />
               <Benefits />
+              <Founder/>
+                            <HowWeAreDifferent/>
+
               <Contacts />
               <Footer />
             </>
