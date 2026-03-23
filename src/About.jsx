@@ -24,7 +24,7 @@ const items = [
     image: "/assets/last image.png",
     title: "Transparent Pricing & Guarantee",
     description:
-      "Our flat 8% success fee keeps costs predictable, and with a 45-day replacement guarantee, your hiring is always secure and stress-free",
+      "Our flat 10% success fee keeps costs predictable, and with a 45-day replacement guarantee, your hiring is always secure and stress-free",
   },
   {
     image: "/assets/last second.png",
