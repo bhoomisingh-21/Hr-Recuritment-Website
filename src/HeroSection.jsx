@@ -121,6 +121,8 @@ const HeroSection = () => {
     "/assets/Product manger.svg",
     "/assets/security expert.svg",
     "/assets/web developer.svg",
+    "/assets/AI eng.png",
+    "/assets/Machine eng.png",
   ];
 
   return (
